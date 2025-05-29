@@ -14,9 +14,7 @@ import ru.vladimirminka.task_h3.repo.BusinessRepo;
 @AllArgsConstructor
 public class BusinessController {
     private final BusinessRepo businessRepo;
-
     @PostMapping("/add")
-
     public ResponseEntity<Business> addCompany(@RequestBody Business business) {
         Business saveBusiness = businessRepo.save(business);
         return ResponseEntity.status(201).body(saveBusiness);
